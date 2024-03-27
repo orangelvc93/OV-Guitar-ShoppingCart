@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+  /* -----------Font-------------------- */
+  --font-family: "Outfit", sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-bold: 900;
+  --font-size-normal: clamp(2px, 4vw, 16px);
+  --font-size-big: clamp(25px, 4vw, 60px);
+  --font-size-mid: clamp(20px, 4vw, 30px);
+
+  /* Color ------------------------------------ */
+  --font-color: #ffff;
+
+
+  --primary-color: #2d2d2d;
+  --primary-color2: rgb(99, 99, 99);
+  --secondary-color: #D88506;
+  --secondary-color2: rgb(255, 153, 0);
+  --color-delete: #cf0505;
+
+  --shadow: rgba(39, 39, 39, 0.2) 0px 2px 8px 0px;
+}
+
+/* GLOBALES ------------------------------------------- */
+html {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--font-color);
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  font-size: var(--font-size-normal);
+}
+
+.space {
+  width: 30px;
+}
+
+/* BOTONES ----------------------- */
+.btn-dark {
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  text-transform: uppercase;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-dark:hover {
+  background: var(--primary-color2);
+}
+
+.btn-ctd {
+  font-weight: 400;
+  width: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+}
+
+.btn-delete {
+  cursor: pointer;
+  background-color: var(--color-delete);
+  border: none;
+  width: 20px;
+  height: 20px;
+
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--font-color);
+}
+
+.btn-vaciar {
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 10px 0;
+}
+
+
+/* HEADER ------------------------------------------- */
+.header {
+  background-image: url(../img/cursos_bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container-header {
+  padding: 20px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0000008d;
+  width: 100%;
+}
+
+.img-logo {
+  width: 25vw;
+}
+
+
+.icon-cart {
+  aspect-ratio: 1/1;
+  width: 2.5vw;
+  cursor: pointer;
+}
+
+/* Cart ------- */
+.container-cart {
+  position: relative;
+}
+
+
+.cart-table {
+  position: absolute;
+  width: 330px;
+  height: auto;
+  background-color: var(--font-color);
+  right: 0px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  animation: fadeOutAnimation ease-in-out .3s forwards;
+}
+
+.container-cart:hover .cart-table {
+  animation: fadeInAnimation ease-in-out .5s forwards;
+  display: block;
+
+}
+
+
+@keyframes fadeInAnimation {
+  0% {
+    max-height: 0;
+    padding: 10px;
+  }
+
+  100% {
+    padding: 10px;
+    max-height: 40rem;
+  }
+}
+
+@keyframes fadeOutAnimation {
+  0% {
+    max-height: 40rem;
+    padding: 10px;
+  }
+
+  100% {
+    max-height: 0;
+
+  }
+}
+
+/* Dentro de la tabla---------------- */
+.table-empty {
+  border-bottom: 1px solid #9f9e9e61;
+  width: 100%;
+  font-size: 20px;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+td img {
+  aspect-ratio: 1/2;
+  width: 40px;
+}
+
+tr th {
+  width: 60px;
+  font-size: 14px;
+}
+
+tr td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  font-size: 14px;
+}
+
+.table-head {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #9f9e9e61;
+}
+
+.table-body {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #9f9e9e61;
+}
+
+.total {
+  font-weight: 600;
+}
+
+
+/* MAIN ------------------------------------- */
+main {
+  margin: 0 auto;
+  width: 90%;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: var(--secondary-color);
+  font-size: var(--font-size-big);
+  font-weight: 900;
+}
+
+
+
+.products-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.container-product {
+  display: flex;
+  overflow: hidden;
+  width: 300px;
+}
+
+.guitarra {
+  width: 100px;
+}
+
+.product-contain {
+  color: var(--primary-color);
+  padding: 10px;
+  border-radius: 0 20px 10px 0px;
+}
+
+.product-contain p {
+  margin-top: 10px;
+}
+
+.text {
+  font-size: 14px;
+}
+
+.price {
+  color: var(--secondary-color);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+
+
+.product-contain h2 {
+  color: var(--primary-color);
+  font-size: var(--font-size-mid);
+}
+
+
+/* TAMAÑO MOVIL -------------------------------- */
+@media (max-width: 460px) {
+  .container-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .img-logo {
+    width: 50vw;
+  }
+
+  .icon-cart {
+    width: 7vw;
+  }
+
+  .cart-table {
+    position: fixed;
+    width: 100%;
+  }
+}
